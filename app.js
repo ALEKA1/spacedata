@@ -1,34 +1,38 @@
+/**
+ * Deps
+ */
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var config = require('./config/config')
-var clientRouter = require('./routes/routes-client');
-var apiRouter = require('./routes/routes-api');
-
+/**
+ * App
+ */
 var app = express();
+var config = require('./config/config');
+// var db = require('./src/database/connection');
 
 /**
- * View engine
+ * Models
  */
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// var planet = db.import(__dirname + '/src/models/planet');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+/**
+ * Routing
+ */
+var apiRouter = require('./src/routes/api');
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Routes
  */
-app.use('/', clientRouter);
 app.use('/api', apiRouter);
 
 /**
@@ -56,7 +60,12 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({
+    status: 500,
+    message: err.message
+  });
+
+  next();
 });
 
 app.listen(config.expressPort, function () {
