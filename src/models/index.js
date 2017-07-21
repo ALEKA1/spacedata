@@ -2,7 +2,10 @@ var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('spacedata', 'sblue', 'ibmchinccd', {
+var mysqlUser = 'sblue';
+var mysqlPassword = 'ibmchinccd';
+
+var sequelize = new Sequelize('spacedata', mysqlUser, mysqlPassword, {
   host: 'localhost',
   dialect: 'mysql',
   pool: {
