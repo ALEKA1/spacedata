@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
  */
 var app = express();
 var config = require('./config/config');
-// var db = require('./src/database/connection');
+var apiVersion = 1;
 
 /**
  * Models
@@ -33,7 +33,7 @@ app.use(cookieParser());
 /**
  * Routes
  */
-app.use('/api', apiRouter);
+app.use('/api/v'+ apiVersion, apiRouter);
 
 /**
  * 404 Error handling
