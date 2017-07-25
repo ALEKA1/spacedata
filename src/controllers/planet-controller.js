@@ -1,12 +1,16 @@
 module.exports = (Planet) => {
   return {
     getAll(req, res) {
+      var orderBy = req.query && req.query.orderBy ? req.query.orderBy : 'distanceFromParent'
+      var order = req.query && req.query.order ? [orderBy, req.query.order] : [orderBy]
+      var options = {
+        order: [
+          order,
+        ],
+      }
+
       return Planet
-        .findAll({
-          order: [
-            ['createdAt', 'DESC'],
-          ],
-        })
+        .findAll(options)
         .then((planets) => res.status(200).send(planets))
         .catch((error) => res.status(400).send(error))
     },
