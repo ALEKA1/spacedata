@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start server.js --watch",
-    "restart": "pm2 restart server.js --watch"
+    "start": "pm2 start server.js --watch --name 'spacedata'",
+    "restart": "pm2 restart spacedata --watch"
   },
   "license": "ISC",
   "dependencies": {
