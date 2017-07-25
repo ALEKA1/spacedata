@@ -9,7 +9,10 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
-router.get('/planets', planetController.getAll);
+router.route('/planets')
+	.get(planetController.getAll)
+	.post(planetController.create);
+
 router.get('/planets/:planetId', planetController.getById);
 
 module.exports = router;
