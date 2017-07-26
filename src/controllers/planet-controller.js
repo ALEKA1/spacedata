@@ -10,7 +10,7 @@ module.exports = (Planet) => {
       }
 
       return Planet
-        .findAll(options)
+        .findAll()
         .then((planets) => res.status(200).send(planets))
         .catch((error) => res.status(400).send(error))
     },

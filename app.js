@@ -11,13 +11,8 @@ var bodyParser = require('body-parser');
  * App
  */
 var app = express();
-var config = require('./config/config');
 var apiVersion = 1;
-
-/**
- * Models
- */
-// var planet = db.import(__dirname + '/src/models/planet');
+var expressPort = 2583;
 
 /**
  * Routing
@@ -28,7 +23,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Routes
@@ -68,8 +62,8 @@ app.use(function(err, req, res, next) {
   next();
 });
 
-app.listen(config.expressPort, function () {
-  console.log(`App listening on port ${config.expressPort}`)
+app.listen(expressPort, function () {
+  console.log(`App listening on port ${expressPort}`)
 })
 
 module.exports = app;
