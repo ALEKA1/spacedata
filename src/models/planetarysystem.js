@@ -96,6 +96,14 @@ module.exports = function(sequelize, DataTypes) {
       },
 
       /**
+       * Measurement of stellar mass.  It is usually enumerated 
+       * in terms of the Sun's mass as a proportion of a solar mass.
+       */
+      mass: {
+        type: DataTypes.FLOAT
+      }
+
+      /**
        * Name(s) of who discovered the system
        */
       discoveredBy: {
