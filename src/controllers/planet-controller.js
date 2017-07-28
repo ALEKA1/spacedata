@@ -10,9 +10,18 @@ module.exports = (Planet) => {
       }
 
       return Planet
-        .findAll()
-        .then((planets) => res.status(200).send(planets))
-        .catch((error) => res.status(400).send(error))
+        .findAll(options)
+        .then((planets) => {
+          res.status(200).send(planets)
+        })
+        .catch((error, b) => {
+          console.log('');
+          console.log('ERROR:', error);
+          console.log('b:', b);
+          console.log('');
+
+          res.status(400).send(error)
+        })
     },
 
     getById(req, res) {

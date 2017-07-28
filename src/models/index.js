@@ -7,16 +7,6 @@ var config = require('../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var db = {};
 
-// sequelize
-//   .authenticate()
-//   .then(function(err) {
-//     console.log('Connection has been established successfully.')
-//   })
-//   .catch(function (err) {
-//     console.log('Unable to connect to the database:', err)
-//   }
-// );
-
 fs
   .readdirSync(__dirname)
   .filter(function(file) {

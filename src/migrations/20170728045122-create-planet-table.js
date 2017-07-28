@@ -44,6 +44,14 @@ module.exports = {
       axialTilt: {
         type: Sequelize.FLOAT,
       },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      }
     });
   },
 
