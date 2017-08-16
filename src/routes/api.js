@@ -2,10 +2,6 @@ var express = require('express');
 var models  = require('../models');
 var router = express.Router();
 
-	
-console.log('models.planet', models.Planet);
-
-
 var planetController = require('../controllers/planet-controller')(models.Planet);
 
 // middleware that is specific to this router

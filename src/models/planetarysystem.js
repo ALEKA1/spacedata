@@ -54,7 +54,7 @@ module.exports = function(sequelize, DataTypes) {
        * https://en.wikipedia.org/wiki/Apparent_magnitude
        */
       apparentMagnitude: {
-        type: DataTypes.STRING,
+        type: DataTypes.FLOAT,
       },
 
       /**
@@ -104,9 +104,32 @@ module.exports = function(sequelize, DataTypes) {
       },
 
       /**
+       * Kelvin
+       */
+      temperature: {
+        type: DataTypes.INTEGER,
+      },
+
+      /**
+       * Gigayear (billion years)
+       *
+       * 10^9 years (10⁹ years)
+       */
+      age: {
+        type: DataTypes.FLOAT,
+      },
+
+      /**
        * Name(s) of who discovered the system
        */
       discoveredBy: {
+        type: DataTypes.STRING,
+      },
+
+      /**
+       * Any extra notes or description about the system.
+       */
+      notes: {
         type: DataTypes.STRING,
       },
 
