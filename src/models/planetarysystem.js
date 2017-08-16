@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
        * North or south degree angle from center point.
        *
        * https://en.wikipedia.org/wiki/Declination
-       * 
+       *
        * degrees (°), minutes ('), and seconds (") of sexagesimal measure
        *
        * Example Ursa Major: +40° 25' 48.9"
@@ -75,7 +75,7 @@ module.exports = function(sequelize, DataTypes) {
 
       /**
        * Stellar classification based on temperature color and luminosity
-       * 
+       *
        * https://en.wikipedia.org/wiki/Stellar_classification
        */
       spectralType: {
@@ -96,12 +96,12 @@ module.exports = function(sequelize, DataTypes) {
       },
 
       /**
-       * Measurement of stellar mass.  It is usually enumerated 
+       * Measurement of stellar mass.  It is usually enumerated
        * in terms of the Sun's mass as a proportion of a solar mass.
        */
       mass: {
-        type: DataTypes.FLOAT
-      }
+        type: DataTypes.FLOAT,
+      },
 
       /**
        * Name(s) of who discovered the system
@@ -114,14 +114,14 @@ module.exports = function(sequelize, DataTypes) {
        * Database date (Not when the actual system was created)
        */
       createdAt: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
       },
 
       /**
-       * Database date (Not when the actual system was updated) 
+       * Database date (Not when the actual system was updated)
        */
       updatedAt: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
       },
     }
   );
