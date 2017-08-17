@@ -11,9 +11,10 @@ Note: This is currently a work-in-progress :smile:
 - PM2
 
 ### Endpoint definition
-<br>
-`/api/{version}/{table}/{:id}`
-<br>
-**Examples**
+```
+/api/{version}/{table}/{:id}
+```
+
+### Examples
 - `/api/v1/planets` should return an array of planets
 - `/api/v1/planets/1` should return Mercury
