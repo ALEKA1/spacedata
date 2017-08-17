@@ -7,8 +7,8 @@ RUNNING=$?
 echo $RUNNING
 
 if [ "${RUNNING}" -ne 0 ]; then
-  pm2 start $appname
+  pm2 start $appname --watch
 else
   echo "App is already running. Gracefully reloading."
-  pm2 reload $appname
+  pm2 reload $appname --watch
 fi;
