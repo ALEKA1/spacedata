@@ -15,7 +15,8 @@ router.route('/planets')
   .get(planetController.getAll)
   .post(planetController.create);
 
-router.get('/planets/:planetId', planetController.getById);
+router
+  .get('/planets/:planetId', planetController.getById);
 
 router.route('/planetary-systems')
   .get(planetarySystemController.getAll);
